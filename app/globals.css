@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #0d0d1a;
+  color: #f5e6c8;
+  font-family: 'system-ui', sans-serif;
+  min-height: 100dvh;
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(0.5); opacity: 0; }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes correct-flash {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.05); background: rgba(251,191,36,0.4); }
+  100% { transform: scale(1); }
+}
+@keyframes wrong-shake {
+  0%,100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+@keyframes firework {
+  0% { transform: scale(0) rotate(0deg); opacity: 1; }
+  100% { transform: scale(3) rotate(180deg); opacity: 0; }
+}
+@keyframes slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.bounce-in { animation: bounce-in 0.4s cubic-bezier(0.175,0.885,0.32,1.275) forwards; }
+.correct-flash { animation: correct-flash 0.5s ease-out; }
+.wrong-shake { animation: wrong-shake 0.35s ease-in-out; }
+.slide-up { animation: slide-up 0.4s ease-out forwards; }
