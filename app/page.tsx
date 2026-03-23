@@ -3,10 +3,12 @@ import Link from "next/link";
 export default function HomePage() {
   return (
     <div className="min-h-dvh flex flex-col items-center justify-center px-4 py-12"
+      role="main"
+      aria-label="おみくじコネクト ホーム"
       style={{ background: "linear-gradient(160deg, #0d0d1a 0%, #1a1030 60%, #0d0d1a 100%)" }}>
 
       <div className="text-center mb-8">
-        <div className="text-8xl mb-4" style={{ filter: "drop-shadow(0 0 24px rgba(251,191,36,0.6))" }}>🎋</div>
+        <div className="text-8xl mb-4" aria-hidden="true" style={{ filter: "drop-shadow(0 0 24px rgba(251,191,36,0.6))" }}>竹</div>
         <h1 className="text-4xl font-black mb-2"
           style={{ color: "#fbbf24", textShadow: "0 0 20px rgba(251,191,36,0.4)" }}>
           おみくじコネクト
@@ -16,13 +18,14 @@ export default function HomePage() {
       </div>
 
       <Link href="/game"
-        className="inline-block px-14 py-4 rounded-2xl text-xl font-black mb-10 transition-all active:scale-95"
+        className="inline-block px-14 py-4 rounded-2xl text-xl font-black mb-10 transition-all active:scale-95 min-h-[44px]"
+        aria-label="今日のおみくじコネクトを引いてプレイする"
         style={{
           background: "linear-gradient(135deg, #fbbf24, #d97706)",
           color: "#1a0a00",
           boxShadow: "0 0 30px rgba(251,191,36,0.4)",
         }}>
-        今日のおみくじを引く 🎋
+        今日のおみくじを引く
       </Link>
 
       <div className="w-full max-w-sm space-y-3">

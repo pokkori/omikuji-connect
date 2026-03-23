@@ -194,13 +194,15 @@ export default function GamePage() {
                   key={word.word + "-" + idx}
                   onClick={() => toggleSelect(originalIdx)}
                   className="rounded-xl p-2 text-center transition-all active:scale-95"
+                  aria-label={`${word.word}を${isSelected ? "選択解除" : "選択"}する`}
+                  aria-pressed={isSelected}
                   style={{
                     background: isSelected ? "rgba(251,191,36,0.3)" : "rgba(255,255,255,0.06)",
                     border: isSelected ? "2px solid #fbbf24" : "1px solid rgba(255,255,255,0.1)",
                     minHeight: "64px",
                   }}
                 >
-                  <div className="text-lg">{word.emoji}</div>
+                  <div className="text-lg" aria-hidden="true">{word.emoji}</div>
                   <div className="text-xs font-bold text-amber-100 leading-tight mt-0.5">{word.word}</div>
                 </button>
               );
@@ -210,7 +212,8 @@ export default function GamePage() {
           <button
             onClick={submitGuess}
             disabled={selected.size !== 4}
-            className="w-full py-3 rounded-xl font-black text-base transition-all active:scale-95"
+            className="w-full py-3 rounded-xl font-black text-base transition-all active:scale-95 min-h-[44px]"
+            aria-label={selected.size === 4 ? "4枚選択済み — 答えを決定する" : `${selected.size}枚選択中 — あと${4 - selected.size}枚選んでください`}
             style={selected.size === 4
               ? { background: "linear-gradient(135deg,#fbbf24,#d97706)", color: "#1a0a00" }
               : { background: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.3)", cursor: "not-allowed" }
