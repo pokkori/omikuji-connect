@@ -28,5 +28,15 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="ja"><body>{children}</body></html>;
+  return (
+    <html lang="ja">
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="theme-color" content="#0d0d1a" />
+      </head>
+      <body>{children}</body>
+    </html>
+  );
 }

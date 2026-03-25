@@ -28,16 +28,15 @@ export default function HomePage() {
         今日のおみくじを引く
       </Link>
 
-      <div className="w-full max-w-sm space-y-3">
+      <div className="w-full max-w-sm space-y-3" role="list" aria-label="ゲームの特徴">
         {[
-          { icon: "🃏", title: "16枚のワードを分類", desc: "仕事運・恋愛運・健康運・金運の4グループに振り分ける" },
-          { icon: "🤔", title: "どのカテゴリ？考えよう", desc: "間違えると炎が燃える。3ミスでおみくじが燃え尽きる！" },
-          { icon: "🤖", title: "AI運勢診断", desc: "正解数に応じてAIが「大吉〜凶」を判定・メッセージ生成" },
-          { icon: "📤", title: "Xでシェア", desc: "全国同じ問題。今日の結果を友達と競おう" },
-        ].map((item, i) => (
-          <div key={i} className="flex gap-3 items-center p-3 rounded-xl"
+          { title: "16枚のワードを分類", desc: "仕事運・恋愛運・健康運・金運の4グループに振り分ける" },
+          { title: "どのカテゴリ？考えよう", desc: "間違えると炎が燃える。3ミスでおみくじが燃え尽きる！" },
+          { title: "AI運勢診断", desc: "正解数に応じてAIが「大吉〜凶」を判定・メッセージ生成" },
+          { title: "Xでシェア", desc: "全国同じ問題。今日の結果を友達と競おう" },
+        ].map((item) => (
+          <div key={item.title} role="listitem" className="flex gap-3 items-center p-3 rounded-xl"
             style={{ background: "rgba(251,191,36,0.06)", border: "1px solid rgba(251,191,36,0.15)" }}>
-            <span className="text-2xl">{item.icon}</span>
             <div>
               <div className="font-bold text-amber-200 text-sm">{item.title}</div>
               <div className="text-xs text-amber-600">{item.desc}</div>
@@ -49,6 +48,15 @@ export default function HomePage() {
       <div className="mt-8 text-xs text-amber-800 text-center">
         毎日0:00に新しい問題が更新されます
       </div>
+
+      <footer className="mt-6 text-xs text-center" style={{ color: "rgba(251,191,36,0.4)" }}>
+        <Link href="/legal" className="hover:underline" aria-label="特定商取引法に基づく表記">特定商取引法</Link>
+        {' / '}
+        <Link href="/privacy" className="hover:underline" aria-label="プライバシーポリシー">プライバシーポリシー</Link>
+        {' / '}
+        <Link href="/terms" className="hover:underline" aria-label="利用規約">利用規約</Link>
+        <div className="mt-1">© 2026 ポッコリラボ</div>
+      </footer>
     </div>
   );
 }
