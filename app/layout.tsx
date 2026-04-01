@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import OrbBackground from "@/components/OrbBackground";
 
 const SITE_URL = "https://omikuji-connect.vercel.app";
 const TITLE = "おみくじコネクト | 毎日1問・運勢パズル";
@@ -36,7 +37,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="theme-color" content="#0d0d1a" />
       </head>
-      <body>{children}</body>
+      <body>
+        <OrbBackground />
+        <div style={{ position: "relative", zIndex: 1 }}>{children}</div>
+      </body>
     </html>
   );
 }
