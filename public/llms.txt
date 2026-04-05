@@ -1,28 +1,27 @@
 # おみくじコネクト
-
-> 毎日1問・おみくじワードを正しいカテゴリに分類するカジュアルパズルゲーム
+> おみくじをテーマにしたパズルゲーム
 
 ## サービス概要
+- **カテゴリ**: Webアプリ
+- **URL**: https://omikuji-connect.vercel.app
+- **提供形態**: Webブラウザで利用可能（登録不要で試せます）
+- **開発**: Claude Code + Next.js 16 + Vercel
 
-おみくじコネクトは、16枚の運勢ワードを「仕事運・恋愛運・健康運・金運」の4カテゴリに分類するブラウザ向けパズルゲームです。毎日0:00に新しい問題が更新され、全国共通の問題で友達と結果を競えます。
+## 主要ページ
+- [トップページ](https://omikuji-connect.vercel.app/): メイン機能・サービス説明
+- [ツール](https://omikuji-connect.vercel.app/tool): AI機能の利用画面（一部サービス）
+- [プライバシーポリシー](https://omikuji-connect.vercel.app/privacy): 個人情報の取り扱い
+- [特定商取引法に基づく表記](https://omikuji-connect.vercel.app/legal): 法的情報
 
-## 主な機能
-
-- 毎日更新の16ワード分類パズル
-- 3ミスでゲームオーバーのドキドキ演出
-- AI運勢診断（正解数に応じて大吉〜凶を判定）
-- Xシェア機能（今日の結果を投稿）
+## 利用シーン
+おみくじをテーマにしたパズルゲーム
 
 ## 技術スタック
+- フロントエンド: Next.js 16, React 19, TypeScript, Tailwind CSS
+- AI: Claude claude-sonnet-4-6 (Anthropic)
+- バックエンド: Vercel Edge Functions, Supabase
+- 決済: KOMOJU（クレジットカード・コンビニ払い対応）
 
-- Next.js 16 / React 19
-- Anthropic Claude API（AI運勢診断）
-- Vercel デプロイ
-
-## URL
-
-https://omikuji-connect.vercel.app
-
-## 運営
-
-ポッコリラボ（2026）
+## robots.txt
+AIクローラーによるインデックスを歓迎します。
+GPTBot, ClaudeBot, PerplexityBot, Googlebot-Extended のアクセスを許可しています。
