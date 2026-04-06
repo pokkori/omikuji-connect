@@ -143,9 +143,9 @@ export default function GamePage() {
 
       <div className="flex items-center justify-between mb-3">
         <a href="/" className="text-amber-600 text-sm">← トップ</a>
-        <h1 className="font-black text-lg" style={{ color: "#fbbf24" }}>🎋 おみくじコネクト</h1>
+        <h1 className="font-black text-lg" style={{ color: "#fbbf24" }}>おみくじコネクト</h1>
         <div className="text-xs text-amber-600">
-          {streak > 0 ? "🔥" + streak + "日連続" : "今日"}
+          {streak > 0 ? streak + "日連続" : "今日"}
         </div>
       </div>
 
