@@ -156,9 +156,13 @@ export default function GamePage() {
 
       <div className="flex justify-center gap-2 mb-4">
         {Array.from({ length: MAX_MISTAKES }).map((_, i) => (
-          <span key={i} className="text-xl" style={{ opacity: i < MAX_MISTAKES - mistakes ? 1 : 0.2 }}>
-            🔮
-          </span>
+          <svg key={i} className="w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden="true"
+            style={{ opacity: i < MAX_MISTAKES - mistakes ? 1 : 0.2 }}>
+            <ellipse cx="12" cy="17" rx="4" ry="2" fill="#a78bfa"/>
+            <path d="M8 14c0-5 8-5 8 0" fill="#7c3aed"/>
+            <circle cx="12" cy="10" r="5" fill="#7c3aed" stroke="#a78bfa" strokeWidth="1.5"/>
+            <circle cx="10" cy="9" r="1" fill="#c4b5fd" opacity="0.6"/>
+          </svg>
         ))}
       </div>
 
@@ -227,7 +231,7 @@ export default function GamePage() {
       {gameOver && (
         <div className="mt-4 bounce-in">
           {isLoading ? (
-            <div className="text-center text-amber-300 animate-pulse py-8">🔮 AIが運勢を占っています...</div>
+            <div className="text-center text-amber-300 animate-pulse py-8">AIが運勢を占っています...</div>
           ) : result ? (
             <div className="rounded-2xl p-5 text-center"
               style={{ background: "rgba(251,191,36,0.08)", border: "1px solid rgba(251,191,36,0.3)" }}>
