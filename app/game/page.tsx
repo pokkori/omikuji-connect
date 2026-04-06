@@ -11,9 +11,9 @@ interface FortuneResult {
   advice: string;
 }
 
-const FORTUNE_EMOJI: Record<string, string> = {
-  大吉: "🎉", 吉: "😊", 中吉: "🌸", 小吉: "🍀",
-  末吉: "🌱", 凶: "🔥",
+const FORTUNE_COLOR: Record<string, string> = {
+  大吉: "#f59e0b", 吉: "#10b981", 中吉: "#6366f1", 小吉: "#06b6d4",
+  末吉: "#84cc16", 凶: "#ef4444",
 };
 const MAX_MISTAKES = 3;
 
@@ -122,7 +122,7 @@ export default function GamePage() {
     const catText = solved.length === 4 ? "全問正解！" : solved.length + "/4カテゴリ正解";
     const shareLines = [
       "🎋 おみくじコネクト 今日の結果",
-      r.fortune + " " + (FORTUNE_EMOJI[r.fortune] || "✨"),
+      r.fortune,
       catText,
       r.message,
       "連続" + streak + "日達成！",
@@ -235,7 +235,10 @@ export default function GamePage() {
           ) : result ? (
             <div className="rounded-2xl p-5 text-center"
               style={{ background: "rgba(251,191,36,0.08)", border: "1px solid rgba(251,191,36,0.3)" }}>
-              <div className="text-5xl mb-2">{FORTUNE_EMOJI[result.fortune] || "✨"}</div>
+              <div className="text-4xl font-black mb-2 px-4 py-1 rounded-lg inline-block"
+                style={{ color: FORTUNE_COLOR[result.fortune] || "#fbbf24", border: `2px solid ${FORTUNE_COLOR[result.fortune] || "#fbbf24"}`, background: "rgba(0,0,0,0.3)" }}>
+                {result.fortune}
+              </div>
               <div className="text-3xl font-black mb-2" style={{ color: "#fbbf24" }}>{result.fortune}</div>
               <div className="text-amber-200 text-sm mb-1">{result.message}</div>
               <div className="text-amber-500 text-xs mb-4">{result.advice}</div>
